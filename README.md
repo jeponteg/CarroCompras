@@ -1,1 +1,1 @@
-﻿# se convitió a componentes funcionales los archivos ChoppingCard.js y Shopping.js 
+﻿# se convirtió a componentes funcionales los archivos ChoppingCard.js y Shopping.js 
