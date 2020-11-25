@@ -10,7 +10,6 @@ import { View, StyleSheet, Image, Text, TouchableOpacity, Linking,
         borderRadius: 7,
         marginBottom: 10,
       },
-     
       imageContainer: {
         height: 100,
         flexDirection:'row'

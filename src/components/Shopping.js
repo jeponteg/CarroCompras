@@ -45,62 +45,54 @@ const styles = StyleSheet.create({
       } 
 })
 
-export default class Shopping extends Component {
-renderHeader = () => {
-    return <Text style={styles.renderHeader}>Pedidos</Text>
-  };
-    constructor(props){
-        super(props);
-        this.state = {
-            dishes: dishData,
-        };
-    }
-             
-    render() {
 
-        const {add,itemseleted,deletelist} = this.props;
+const Shopping = ({add,itemseleted,deletelist}) => {
 
-        if(itemseleted!=''){
+    renderHeader = () => {
+        return <Text style={styles.renderHeader}>Pedidos</Text>
+    };
+   
+    if(itemseleted!=''){
         
-            return (
-                <>
-                    <FlatList
-                        ListHeaderComponent={this.renderHeader}
-                        style={styles.flatListContainer}
-                        data={itemseleted}
-                        keyExtractor={({id}) => id.toString()}
-                        renderItem={({
-                        item: {id,title, readyInMinutes, servings, image, sourceUrl},
-                        }) => (
-                            <ShoppingCard
-                                title={title}
-                                readyInMinutes={readyInMinutes}
-                                servings={servings}
-                                image={image}
-                                sourceUrl={sourceUrl}
-                                id={id}
-                            />
-                        )}
-                        ListEmptyComponent={() => (
-                            <View>
-                                <Text style={styles.text}>Lista Vacía</Text>
-                            </View>
-                        )}
-                    />
-
-                    <View style={styles.padre} >
-                        <View style={styles.container}>
-                            <Text style={styles.textTotal}>Total carrito ({add})</Text>
-                            <TouchableOpacity
-                                style={styles.boxCar}
-                                onPress= {deletelist}
-                            >
-                            <Text style={styles.text}>Vaciar Carrito</Text>
-                            </TouchableOpacity>
+        return (
+            <>
+                <FlatList
+                    ListHeaderComponent={renderHeader}
+                    style={styles.flatListContainer}
+                    data={itemseleted}
+                    keyExtractor={({id}) => id.toString()}
+                    renderItem={({
+                    item: {id,title, readyInMinutes, servings, image, sourceUrl},
+                    }) => (
+                        <ShoppingCard
+                            title={title}
+                            readyInMinutes={readyInMinutes}
+                            servings={servings}
+                            image={image}
+                            sourceUrl={sourceUrl}
+                            id={id}
+                        />
+                    )}
+                    ListEmptyComponent={() => (
+                        <View>
+                            <Text style={styles.text}>Lista Vacía</Text>
                         </View>
+                    )}
+                />
+
+                <View style={styles.padre} >
+                    <View style={styles.container}>
+                        <Text style={styles.textTotal}>Total carrito ({add})</Text>
+                        <TouchableOpacity
+                            style={styles.boxCar}
+                            onPress= {deletelist}
+                        >
+                        <Text style={styles.text}>Vaciar Carrito</Text>
+                        </TouchableOpacity>
                     </View>
-                </>   
-            )
+                </View>
+            </>   
+        )
         
         }else{
             
@@ -109,14 +101,17 @@ renderHeader = () => {
                     <View>
                         <FlatList
                             style={styles.flatListContainer}
-                            ListHeaderComponent={this.renderHeader}
+                            ListHeaderComponent={renderHeader}
                         />
                         <Text style={styles.text}>Lista Vacía</Text>
                     </View>                                
                 </>   
                 
             )
-        }
     }
 }
+
+
+export default Shopping
+
 

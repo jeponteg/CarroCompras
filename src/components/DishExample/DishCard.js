@@ -53,11 +53,10 @@ const styles = StyleSheet.create({
  }
 });
 
-export default class DishCard extends Component {
-  render() {
-    const {id,title, readyInMinutes, servings, image,selectItem} = this.props;
+const DishCard = ({id,title, readyInMinutes, servings, image,selectItem}) => {
+    
+  return (
 
-    return (
       <View style={styles.container}>
         <View style={styles.imageContainer}>
           <Image
@@ -87,5 +86,7 @@ export default class DishCard extends Component {
       </View>
       
     );
-  }
+  
 }
+
+export default  DishCard
