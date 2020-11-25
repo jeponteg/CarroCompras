@@ -10,11 +10,7 @@ import { View, StyleSheet, Image, Text, TouchableOpacity, Linking,
         borderRadius: 7,
         marginBottom: 10,
       },
-      container2: {
-        backgroundColor: 'red',
-        borderRadius: 7,
-        marginBottom: 10,
-      },
+     
       imageContainer: {
         height: 100,
         flexDirection:'row'
@@ -39,27 +35,14 @@ import { View, StyleSheet, Image, Text, TouchableOpacity, Linking,
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-      },
-      car: {
-        padding: 10,
-        backgroundColor:'#72368A',
-        borderBottomEndRadius:7,
-        borderBottomStartRadius:7,
-        alignItems: 'center',
-      },
-      text:{
-        color:'#fff',
-        fontWeight:'bold',
-        fontSize:15
-    }
-      
+      },          
   })
   
 export default class ShoppingCard extends Component {
 
     render() {
 
-        const {id,title, readyInMinutes, servings, image, sourceUrl,add,selectItem} = this.props;
+        const {title, readyInMinutes, servings, image, } = this.props;
 
         return(
             <View style={styles.container}>
