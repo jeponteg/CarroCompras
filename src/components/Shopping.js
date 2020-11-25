@@ -13,7 +13,8 @@ const styles = StyleSheet.create({
         flexGrow: 0  
       },
     padre:{
-        alignContent:'center'
+        alignContent:'center',
+        padding:10
     },
     container:{
         height:80,
@@ -23,9 +24,6 @@ const styles = StyleSheet.create({
         flexDirection:'row',
         justifyContent:'space-between',
         alignItems:'center'
-    },
-    padre:{
-        padding:10
     },
     boxCar:{
         height:50,
@@ -40,17 +38,7 @@ const styles = StyleSheet.create({
         color:'#FFFF',
         textAlign:'center'
     },
-    image: {
-        borderTopLeftRadius: 7,
-        borderTopRightRadius: 7,
-        backgroundColor: 'black',
-        width: '100%',
-        height: '100%',
-      },
-      imageContainer: {
-        height: 100,
-      },
-      renderHeader: {
+    renderHeader: {
         color:'#FFFF',
         textDecorationLine: 'underline',
         fontSize: 18
