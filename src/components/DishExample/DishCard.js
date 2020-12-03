@@ -53,25 +53,33 @@ const styles = StyleSheet.create({
  }
 });
 
-const DishCard = ({id,title, readyInMinutes, servings, image,selectItem}) => {
+
+const DishCard = ({id,title, readyInMinutes, servings, image,selectItem,navigation}) => {
     
   return (
 
       <View style={styles.container}>
-        <View style={styles.imageContainer}>
-          <Image
-            style={styles.image}
-            resizeMode="cover"
-            source={{uri: `${baseUri}${image}`}}
-          />
-        </View>
-        <View style={styles.textContainer}>
-          <Text style={styles.title}>{title}</Text>
-          <View style={styles.information}>
-            <Text>{`Listo en ${readyInMinutes} min`}</Text>
-            <Text>{`Para ${servings} personas`}</Text>
+        <TouchableOpacity
+          onPress={()=> navigation.navigate('imagedishes', {
+            itemId: id,
+          })
+        }
+        >
+          <View style={styles.imageContainer}>
+            <Image
+              style={styles.image}
+              resizeMode="cover"
+              source={{uri: `${baseUri}${image}`}}
+            />
           </View>
-        </View>
+          <View style={styles.textContainer}>
+            <Text style={styles.title}>{title}</Text>
+            <View style={styles.information}>
+              <Text>{`Listo en ${readyInMinutes} min`}</Text>
+              <Text>{`Para ${servings} personas`}</Text>
+            </View>
+          </View>
+        </TouchableOpacity>
         <View style={styles.car}>
           <View style={styles.car2}>
             <View>

@@ -23,6 +23,8 @@ const styles = StyleSheet.create({
 });
 
 export default class DishList extends Component {
+
+  
   constructor(props) {
     super(props);
 
@@ -33,6 +35,7 @@ export default class DishList extends Component {
       itemseleted:[]
     };
   }
+  
 
   selectDishes = (name) => {
     const {dishes} = this.state;
@@ -81,6 +84,7 @@ export default class DishList extends Component {
   }
 
   render() {
+    const {navigation} = this.props;
     const {selectedDishes} = this.state;
     const {add} = this.state;
     const {itemseleted} = this.state;
@@ -106,6 +110,7 @@ export default class DishList extends Component {
               image={image}
               sourceUrl={sourceUrl}
               selectItem={this.selectItem}
+              navigation={navigation}
             />
           )}
           ListEmptyComponent={() => (
