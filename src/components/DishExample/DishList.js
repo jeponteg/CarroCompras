@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
+
 import {FlatList, StyleSheet, View, Text, Alert} from 'react-native';
 import HorizontalScroll from '../HorizontalScroll';
-import {baseUri, dishData, dishTitles} from '../../rawData';
+import { dishData, } from '../../rawData';
 import DishCard from './DishCard';
 import Shopping from '../Shopping';
 

@@ -3,8 +3,6 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Home from '../screens/Home';
 import ImageDishes from '../screens/ImageDishes';
 
-
-
 const Stack = createStackNavigator ();
 
 const Navigation = () => {
